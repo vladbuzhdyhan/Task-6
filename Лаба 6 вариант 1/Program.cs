@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Reflection;
-
 namespace Лаба_6_вариант_1
 {
     class Program
@@ -46,6 +45,37 @@ namespace Лаба_6_вариант_1
             
             PropertyInfo[] members = typeof(Student).GetProperties();
             foreach (PropertyInfo m in members) Console.WriteLine(m);
+            ConsoleKeyInfo key;
+            do
+            {   
+                key = Console.ReadKey();
+                if(key.Key == ConsoleKey.Enter)
+                {
+                    Human[] b = new Student[2];
+                    Human[] g = new Girl[2];
+
+                    for(int i = 0; i<2; i++)
+                    {
+                        Random r = new Random();
+                        int rand = r.Next(0, 1);
+                        if (rand == 0) b[i] = new Student("Nikita");
+                        else b[i] = new Botan("Nikita");
+                    }
+
+                    for (int i = 0; i < 2; i++)
+                    {
+                        Random r = new Random();
+                        int rand = r.Next(0, 2);
+                        if (rand == 0) g[i] = new Girl("Nikita");
+                        else if(rand == 1) g[i] = new PrettyGirl("Nikita");
+                        else g[i] = new SmartGirl("Nikita");
+                    }
+
+                    Human.Couple(b[0], g[0]);
+                    Human.Couple(b[1], g[1]);
+                }
+            } while (key.Key != ConsoleKey.Q && key.Key != ConsoleKey.F10);
+
         }
 
     }
