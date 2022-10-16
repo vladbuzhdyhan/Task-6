@@ -11,8 +11,13 @@ namespace Лаба_6_вариант_1
         {
             Name = name;
         }
+        public Human(string name,string midName)
+        {
+            Name = name;
+            MiddleName = midName;
+        }
         public string Name { get; }
-
+        public string MiddleName { get; }
         public string GetName()
         {
             return Name;
