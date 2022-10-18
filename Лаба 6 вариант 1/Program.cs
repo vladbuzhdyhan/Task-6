@@ -7,7 +7,7 @@ namespace Лаба_6_вариант_1
     {
         static void Main(string[] args)
         {
-            
+            ConsoleKeyInfo key;
             Human[] botans = new Student[10];
             Human[] prettyGirls = new PrettyGirl[10];
             for(int i = 0; i < 10; i++)
@@ -42,11 +42,26 @@ namespace Лаба_6_вариант_1
                     Console.WriteLine($"obj name -{createdinst.Name}");
                     Console.WriteLine($"--{Name}");
                 }
-            }
-            
+            }           
             PropertyInfo[] members = typeof(Student).GetProperties();
             foreach (PropertyInfo m in members) Console.WriteLine(m);
+            ConsoleKeyInfo bx;
+
+            do
+            {
+                Human[] b = { new Student("Nikita"), new Botan("Nikita") };
+                bx = Console.ReadKey();
+                if(bx.Key == ConsoleKey.Enter)
+                {
+                    Random r = new Random();
+                    int rand = r.Next(0, 1);
+                }
+            }
+            while (bx.Key != ConsoleKey.Q && bx.Key != ConsoleKey.F10);
+
+                
         }
 
+      
     }
 }
