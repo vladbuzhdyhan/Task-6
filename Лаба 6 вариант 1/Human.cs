@@ -32,6 +32,7 @@ namespace Лаба_6_вариант_1
             int CountOfTrue2 = 0;
             object[] att1 = Attribute.GetCustomAttributes(type1);
             object[] att2 = Attribute.GetCustomAttributes(type2);
+          
             foreach (object obj in att1)
             {
                 CoupleAttribute att = (CoupleAttribute)obj;
