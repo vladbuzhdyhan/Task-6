@@ -8,6 +8,6 @@ namespace Лаба_6_вариант_1
     [Couple("Botan", 0.5, "SmartGirl")]
     sealed class SmartGirl : Girl
     {
-        SmartGirl(string name) : base(name) { }
+        public SmartGirl(string name) : base(name) { }
     }
 }
